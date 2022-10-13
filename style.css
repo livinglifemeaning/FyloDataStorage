@@ -1,0 +1,194 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
+
+:root {
+  --f-primary: "Raleway", sans-serif;
+  --c-text: hsl(243, 100%, 93%);
+  --c-gray: hsl(229, 7%, 55%);
+  --c-component-bg: hsl(228, 56%, 26%);
+  --c-bg: hsl(229, 57%, 11%);
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body,
+p {
+  margin: 0;
+}
+
+main {
+  font-family: var(--f-primary);
+  color: var(--c-text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1.5rem;
+  background: url("./images/bg-mobile.png") var(--c-bg) center / cover no-repeat;
+}
+
+.flexContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.top,
+.bottom {
+  background-color: var(--c-component-bg);
+  border-radius: 10px;
+}
+
+.top {
+  padding: 2.7rem 2.5rem;
+  border-top-right-radius: 100px;
+}
+
+.logo {
+  margin-bottom: 2rem;
+}
+
+.actionsBox {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.iconBox {
+  cursor: pointer;
+  background-color: var(--c-bg);
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  transition: background-color 400ms ease-in-out;
+}
+
+.iconBox:hover {
+  background-color: hsl(229, 57%, 90%);
+}
+
+.bottom {
+  padding: 2rem 1rem 3.5rem;
+  position: relative;
+}
+
+.outerBar {
+  height: 1.3rem;
+  width: 100%;
+  background-color: var(--c-bg);
+  border-radius: 20px;
+  padding: 0.2rem;
+  margin: 1rem 0 0.6rem;
+}
+
+.innerBar {
+  height: 100%;
+  width: 80%;
+  background-image: linear-gradient(
+    95deg,
+    hsl(6, 100%, 80%),
+    hsl(335, 100%, 65%)
+  );
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0.19rem;
+}
+
+.circle {
+  height: 12px;
+  width: 12px;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+.number,
+.value,
+.dataLeft {
+  font-weight: 700;
+}
+
+.dataText {
+  text-align: center;
+}
+
+.valuesContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+}
+
+.dataLeft {
+  position: absolute;
+  background-color: #fff;
+  bottom: -40px;
+  left: 50%;
+  translate: -50%;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  width: 13rem;
+  border-radius: 10px;
+  justify-content: center;
+  padding: 0.8rem 0;
+}
+
+.dataLeft p {
+  color: var(--c-gray);
+  text-transform: uppercase;
+}
+
+.dataLeft .number {
+  color: var(--c-bg);
+  font-size: 3rem;
+}
+
+@media (min-width: 750px) {
+  main {
+    background: url("./images/bg-desktop.png") var(--c-bg) center / cover
+      no-repeat;
+  }
+  .flexContainer {
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    align-items: flex-end;
+  }
+  .top {
+    width: 22%;
+  }
+
+  .bottom {
+    width: 45%;
+    margin-bottom: 0;
+    padding: 2.5rem 3rem;
+  }
+
+  .dataLeft {
+    translate: 0;
+    top: -60px;
+    right: 0;
+    translate: 100px;
+    bottom: auto;
+  }
+
+  .dataLeft::before {
+    content: "";
+    position: absolute;
+    right: 0; 
+    bottom: -20px;  
+    width: 0;
+    height: 0;
+    border-top: 40px solid transparent;
+    border-bottom: 40px solid transparent;
+    border-right: 40px solid #fff;
+
+  }
+}
